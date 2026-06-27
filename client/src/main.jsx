@@ -1,4 +1,5 @@
 import React from "react";
+
 import ReactDOM from "react-dom/client";
 
 import {
@@ -14,9 +15,10 @@ import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard
 from "./pages/AdminDashboard";
 
+import ServiceDetails
+from "./pages/ServiceDetails";
+
 import "./styles/global.css";
-
-
 
 ReactDOM.createRoot(
   document.getElementById("root")
@@ -28,19 +30,23 @@ ReactDOM.createRoot(
 
       <Routes>
 
+        {/* HOME */}
         <Route
           path="/"
           element={<App />}
         />
 
+        {/* SERVICE DETAILS */}
+        <Route
+          path="/service/:slug"
+          element={<ServiceDetails />}
+        />
 
-
+        {/* ADMIN */}
         <Route
           path="/admin"
           element={<AdminLogin />}
         />
-
-
 
         <Route
           path="/admin-dashboard"
@@ -54,3 +60,4 @@ ReactDOM.createRoot(
   </React.StrictMode>
 
 );
+

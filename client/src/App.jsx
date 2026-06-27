@@ -9,7 +9,7 @@ import Services from "./components/Services";
 import Reviews from "./components/Reviews";
 import Footer from "./components/Footer";
 import ReviewForm from "./components/ReviewForm";
-
+import LeadForm from "./components/LeadForm";
 
 import {
   getBusinessProfile,
@@ -219,45 +219,32 @@ function App() {
 
 
 
-        {/* BUTTONS */}
         <div
-          style={{
-            display:"flex",
-            gap:"18px",
-            marginTop:"42px",
-            flexWrap:"wrap",
-          }}
-        >
+        style={{
+        display: "flex",
+        justifyContent: "center",
+        gap: "20px",
+        marginTop: "40px",
+        flexWrap: "wrap",
+        alignItems: "center",
+       }}
+       >
 
-          <a
-            href="https://upwork.com/freelancers/~010c38570f0d8c1ab5"
-            target="_blank"
-            className="btn-light"
-          >
+       <a
+          href={business?.upwork}
+          target="_blank"
+          className="btn-light">
+         Hire On Upwork
+       </a>
 
-            Hire On Upwork
+       <a
+         href="https://wa.me/2348136545616"
+          target="_blank"
+          className="btn-primary">
+          Chat On WhatsApp
+       </a>
 
-          </a>
-
-
-
-
-
-
-
-
-
-          <a
-            href="https://wa.me/2348136545616"
-            target="_blank"
-            className="btn-secondary"
-          >
-
-            Chat On WhatsApp
-
-          </a>
-
-        </div>
+       </div>
 
       </div>
 
@@ -270,7 +257,7 @@ function App() {
 
 
 
-
+      <LeadForm />
       <Footer />
 
     </div>

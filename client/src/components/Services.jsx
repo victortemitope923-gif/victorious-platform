@@ -1,244 +1,117 @@
 import React from "react";
 
-import Reveal from "./Reveal";
-
-import {
-  FaChartLine,
-  FaSearch,
-  FaBullhorn,
-  FaRocket,
-} from "react-icons/fa";
-
-
+import { Link } from "react-router-dom";
 
 export default function Services() {
 
   const services = [
 
     {
-      title:
-        "Udemy SEO Optimization",
 
-      icon:
-        <FaSearch />,
+      title:
+        "Udemy SEO",
+
+      slug:
+        "udemy-seo",
 
       image:
-        "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop",
 
       description:
-        "Improve your course rankings with strategic keyword optimization, titles, subtitles and marketplace positioning.",
+        "Boost your course rankings and visibility using strategic Udemy SEO optimization."
+
     },
-
-
-
-
-
-
 
     {
-      title:
-        "Course Promotion",
 
-      icon:
-        <FaBullhorn />,
+      title:
+        "Course Marketing",
+
+      slug:
+        "course-marketing",
 
       image:
-        "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop",
 
       description:
-        "Reach more students using modern traffic systems, promotion campaigns and scalable enrollment strategies.",
+        "Promote your courses with targeted strategies that increase enrollments and conversions."
+
     },
-
-
-
-
-
-
 
     {
-      title:
-        "Growth Consulting",
 
-      icon:
-        <FaChartLine />,
+      title:
+        "AEO Optimization",
+
+      slug:
+        "aeo-optimization",
 
       image:
-        "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
 
       description:
-        "We build long-term growth systems that help instructors increase visibility, sales and recurring student acquisition.",
-    },
+        "Optimize your course visibility for AI-driven search and answer engines."
 
-
-
-
-
-
-
-
-    {
-      title:
-        "Marketplace Strategy",
-
-      icon:
-        <FaRocket />,
-
-      image:
-        "https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg?auto=compress&cs=tinysrgb&w=1200",
-
-      description:
-        "Advanced optimization strategies designed specifically for Udemy algorithm performance and marketplace success.",
-    },
+    }
 
   ];
 
-
-
-
-
-
-
-
-
-
   return (
 
-    <section className="services-section">
+    <section
+      className="section"
+      id="services"
+    >
 
       <div className="container">
 
+        <p className="section-tag">
+          OUR SERVICES
+        </p>
 
+        <h2 className="heading-lg">
 
+          Premium Growth Services
 
-        {/* TOP */}
-        <div className="section-heading">
+        </h2>
 
-          <p className="section-tag">
+        <div
+          className="services-grid"
+          style={{
+            marginTop:"60px"
+          }}
+        >
 
-            OUR SERVICES
+          {services.map((service,index) => (
 
-          </p>
+            <div
+              key={index}
+              className="card service-card"
+            >
 
+              <img
+                src={service.image}
+                alt={service.title}
+              />
 
+              <h3>
+                {service.title}
+              </h3>
 
+              <p>
+                {service.description}
+              </p>
 
+              <Link
+                to={`/service/${service.slug}`}
+                className="btn-primary"
+              >
 
+                Learn More
 
-          <h2 className="section-title">
+              </Link>
 
-            Everything Needed
-            To Scale Your
-            Udemy Business
-
-          </h2>
-
-
-
-
-
-
-          <p className="section-text">
-
-            Modern growth systems,
-            real optimization strategies
-            and long-term scaling support
-            for serious instructors.
-
-          </p>
-
-        </div>
-
-
-
-
-
-
-
-
-
-        {/* GRID */}
-        <div className="services-grid">
-
-          {services.map((service, index) => (
-
-            <Reveal key={index}>
-
-              <div className="service-card">
-
-
-
-
-                {/* IMAGE */}
-                <div className="service-image-wrapper">
-
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="service-image"
-                  />
-
-                </div>
-
-
-
-
-
-
-
-
-                {/* CONTENT */}
-                <div className="service-content">
-
-                  <div className="service-icon">
-
-                    {service.icon}
-
-                  </div>
-
-
-
-
-
-
-
-
-                  <h3 className="service-title">
-
-                    {service.title}
-
-                  </h3>
-
-
-
-
-
-
-
-
-                  <p className="service-description">
-
-                    {service.description}
-
-                  </p>
-
-
-
-
-
-
-
-
-                  <button className="service-btn">
-
-                    Learn More →
-
-                  </button>
-
-                </div>
-
-              </div>
-
-            </Reveal>
+            </div>
 
           ))}
 
@@ -251,3 +124,4 @@ export default function Services() {
   );
 
 }
+

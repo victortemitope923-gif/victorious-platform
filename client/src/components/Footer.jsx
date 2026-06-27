@@ -5,26 +5,22 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 
-
+import {
+  SiUpwork,
+} from "react-icons/si";
 
 export default function Footer() {
 
   return (
 
-    <footer className="footer">
+    <footer
+      className="footer"
+      id="contact"
+    >
 
-      <div
-        className="container"
-        style={{
-          paddingTop:"90px",
-          paddingBottom:"40px",
-        }}
-      >
+      <div className="container">
 
-
-
-
-        <div className="grid-4">
+        <div className="footer-grid">
 
 
 
@@ -32,35 +28,49 @@ export default function Footer() {
           {/* BRAND */}
           <div>
 
-            <img
-              src="https://i.postimg.cc/8zQ7s8D8/logo.png"
-              alt="logo"
+            <div
               style={{
-                width:"58px",
-                marginBottom:"24px",
-              }}
-            />
-
-
-
-
-
-
-
-
-            <h2
-              style={{
-                fontSize:"34px",
-                fontWeight:800,
+                display: "flex",
+                alignItems: "center",
+                gap: "14px",
+                marginBottom: "24px",
               }}
             >
 
-              Victorious
+              <img
+                src="https://i.postimg.cc/52z8MyKV/2a4583a94e4fcad68a090f2a0e521cce-removebg-preview.png"
+                alt="Victorious"
+                style={{
+                  width: "70px",
+                }}
+              />
 
-            </h2>
+              <div>
 
+                <h2
+                  style={{
+                    fontSize: "28px",
+                    fontWeight: 800,
+                  }}
+                >
 
+                  Victorious
 
+                </h2>
+
+                <p
+                  style={{
+                    color: "#94A3B8",
+                  }}
+                >
+
+                  Digital Growth
+
+                </p>
+
+              </div>
+
+            </div>
 
 
 
@@ -68,15 +78,16 @@ export default function Footer() {
 
             <p
               style={{
-                color:"#CBD5E1",
-                marginTop:"20px",
-                lineHeight:1.9,
+                color: "#CBD5E1",
+                lineHeight: 1.9,
+                maxWidth: "340px",
               }}
             >
 
-              Helping instructors grow,
-              optimize and scale their
-              online course businesses.
+              Helping instructors grow
+              visibility, rankings,
+              enrollments and long-term
+              marketplace success.
 
             </p>
 
@@ -93,45 +104,25 @@ export default function Footer() {
           {/* LINKS */}
           <div>
 
-            <h3
-              style={{
-                marginBottom:"24px",
-                fontSize:"20px",
-              }}
-            >
-
+            <h3 className="footer-title">
               Navigation
-
             </h3>
 
-
-
-
-
-
-
-
-            <div
-              style={{
-                display:"flex",
-                flexDirection:"column",
-                gap:"16px",
-              }}
-            >
+            <div className="footer-links">
 
               <a href="#">
                 Home
               </a>
 
-              <a href="#">
+              <a href="#services">
                 Services
               </a>
 
-              <a href="#">
+              <a href="#reviews">
                 Reviews
               </a>
 
-              <a href="#">
+              <a href="#contact">
                 Contact
               </a>
 
@@ -147,51 +138,29 @@ export default function Footer() {
 
 
 
-
           {/* SERVICES */}
           <div>
 
-            <h3
-              style={{
-                marginBottom:"24px",
-                fontSize:"20px",
-              }}
-            >
-
+            <h3 className="footer-title">
               Services
-
             </h3>
 
-
-
-
-
-
-
-
-            <div
-              style={{
-                display:"flex",
-                flexDirection:"column",
-                gap:"16px",
-                color:"#CBD5E1",
-              }}
-            >
+            <div className="footer-links">
 
               <p>
                 Udemy SEO
               </p>
 
               <p>
-                Course Promotion
+                AEO Optimization
               </p>
 
               <p>
-                Growth Consulting
+                Course Marketing
               </p>
 
               <p>
-                Marketplace Strategy
+                Growth Strategy
               </p>
 
             </div>
@@ -206,47 +175,42 @@ export default function Footer() {
 
 
 
-
-          {/* SOCIAL */}
+          {/* CONTACT */}
           <div>
 
-            <h3
-              style={{
-                marginBottom:"24px",
-                fontSize:"20px",
-              }}
-            >
-
+            <h3 className="footer-title">
               Connect
-
             </h3>
 
-
-
-
-
-
-
-
-            <div
-              style={{
-                display:"flex",
-                gap:"16px",
-              }}
-            >
+            <div className="footer-links">
 
               <a
-                href="https://web.facebook.com/profile.php?id=61581763733878"
+                href="https://upwork.com/freelancers/~010c38570f0d8c1ab5"
                 target="_blank"
-                className="social-circle"
+                className="footer-social"
               >
 
-                <FaFacebookF />
+                <SiUpwork />
+
+                Upwork
 
               </a>
 
 
 
+
+
+              <a
+                href="https://web.facebook.com/profile.php?id=61581763733878"
+                target="_blank"
+                className="footer-social"
+              >
+
+                <FaFacebookF />
+
+                Facebook
+
+              </a>
 
 
 
@@ -255,36 +219,16 @@ export default function Footer() {
               <a
                 href="https://wa.me/2348136545616"
                 target="_blank"
-                className="social-circle"
+                className="footer-social"
               >
 
                 <FaWhatsapp />
 
+                WhatsApp
+
               </a>
 
             </div>
-
-
-
-
-
-
-
-
-
-
-            <a
-              href="https://upwork.com/freelancers/~010c38570f0d8c1ab5"
-              target="_blank"
-              className="btn-primary"
-              style={{
-                marginTop:"30px",
-              }}
-            >
-
-              Hire On Upwork
-
-            </a>
 
           </div>
 
@@ -295,22 +239,10 @@ export default function Footer() {
 
 
 
-
-
-
         {/* BOTTOM */}
-        <div
-          style={{
-            borderTop:
-              "1px solid rgba(255,255,255,.08)",
-            marginTop:"70px",
-            paddingTop:"28px",
-            textAlign:"center",
-            color:"#94A3B8",
-          }}
-        >
+        <div className="footer-bottom">
 
-          © 2026 Victorious Digital Enterprises.
+          © 2026 Victorious Digital.
           All rights reserved.
 
         </div>

@@ -1,18 +1,22 @@
-import React, { useState } from "react";
+import React, {
+  useState,
+} from "react";
+
+import {
+  Link,
+} from "react-router-dom";
 
 import {
   FaWhatsapp,
   FaFacebookF,
+  FaBars,
+  FaTimes,
 } from "react-icons/fa";
-
-
 
 export default function Navbar() {
 
   const [open, setOpen] =
     useState(false);
-
-
 
   return (
 
@@ -22,23 +26,17 @@ export default function Navbar() {
 
         <nav className="nav-wrapper">
 
-
-
-
           {/* LOGO */}
-          <a
-            href="#"
+          <Link
+            to="/"
             className="logo-area"
           >
 
             <img
-              src="https://i.postimg.cc/8zQ7s8D8/logo.png"
-              alt="Victorious Logo"
+              src="https://i.postimg.cc/52z8MyKV/2a4583a94e4fcad68a090f2a0e521cce-removebg-preview.png"
+              alt="Victorious Digital"
               className="logo-img"
             />
-
-
-
 
             <div>
 
@@ -52,41 +50,32 @@ export default function Navbar() {
 
             </div>
 
-          </a>
+          </Link>
 
 
 
 
 
-
-
-
-
-          {/* DESKTOP LINKS */}
+          {/* DESKTOP MENU */}
           <div className="desktop-menu">
 
-            <a href="#">
+            <a href="/#">
               Home
             </a>
 
-            <a href="#">
+            <a href="/#services">
               Services
             </a>
 
-            <a href="#">
+            <a href="/#reviews">
               Reviews
             </a>
 
-            <a href="#">
+            <a href="/#contact">
               Contact
             </a>
 
           </div>
-
-
-
-
-
 
 
 
@@ -109,8 +98,6 @@ export default function Navbar() {
 
 
 
-
-
             <a
               href="https://wa.me/2348136545616"
               target="_blank"
@@ -125,20 +112,15 @@ export default function Navbar() {
 
 
 
-
-
             <a
               href="https://upwork.com/freelancers/~010c38570f0d8c1ab5"
               target="_blank"
-              className="btn-primary"
+              className="btn-primary nav-btn"
             >
 
               Hire Us
 
             </a>
-
-
-
 
 
 
@@ -151,7 +133,9 @@ export default function Navbar() {
               }
             >
 
-              ☰
+              {open
+                ? <FaTimes />
+                : <FaBars />}
 
             </button>
 
@@ -163,31 +147,26 @@ export default function Navbar() {
 
 
 
-
-
-
-
         {/* MOBILE MENU */}
         {open && (
 
           <div className="mobile-menu">
 
-            <a href="#">
+            <a href="/#">
               Home
             </a>
 
-            <a href="#">
+            <a href="/#services">
               Services
             </a>
 
-            <a href="#">
+            <a href="/#reviews">
               Reviews
             </a>
 
-            <a href="#">
+            <a href="/#contact">
               Contact
             </a>
-
 
 
 
@@ -214,3 +193,4 @@ export default function Navbar() {
   );
 
 }
+
