@@ -1,4 +1,5 @@
-import api from "./api";
+const API =
+  "https://victorious-platform-api.onrender.com/api/reviews";
 
 
 
@@ -6,15 +7,11 @@ export const getReviews =
   async () => {
 
     const response =
-      await api.get("/reviews");
+      await fetch(API);
 
-    return response.data;
+    return response.json();
 
-  };
-
-
-
-
+};
 
 
 
@@ -22,12 +19,22 @@ export const createReview =
   async (reviewData) => {
 
     const response =
-      await api.post(
-        "/reviews",
-        reviewData
-      );
+      await fetch(API, {
 
-    return response.data;
+        method: "POST",
 
-  };
+        headers: {
+          "Content-Type":
+            "application/json",
+        },
+
+        body: JSON.stringify(
+          reviewData
+        ),
+
+      });
+
+    return response.json();
+
+};
 

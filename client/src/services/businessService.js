@@ -1,4 +1,5 @@
-import api from "./api";
+const API =
+  "https://victorious-platform-api.onrender.com/api/business";
 
 
 
@@ -6,9 +7,9 @@ export const getBusinessProfile =
   async () => {
 
     const response =
-      await api.get("/business");
+      await fetch(API);
 
-    return response.data;
+    return response.json();
 
-  };
+};
 
