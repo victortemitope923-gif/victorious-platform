@@ -3,6 +3,7 @@ const API =
 
 
 
+// GET REVIEWS
 export const getReviews =
   async () => {
 
@@ -15,6 +16,7 @@ export const getReviews =
 
 
 
+// CREATE REVIEW
 export const createReview =
   async (reviewData) => {
 
@@ -38,3 +40,19 @@ export const createReview =
 
 };
 
+
+
+// DELETE REVIEW
+export const deleteReview =
+  async (id) => {
+
+    const response =
+      await fetch(`${API}/${id}`, {
+
+        method: "DELETE",
+
+      });
+
+    return response.json();
+
+};

@@ -126,3 +126,37 @@ export const approveReview = async (req, res) => {
 
 };
 
+// DELETE REVIEW
+export const deleteReview = async (req, res) => {
+
+  try {
+
+    const review =
+      await Review.findByIdAndDelete(
+        req.params.id
+      );
+
+    if (!review) {
+
+      return res.status(404).json({
+        success: false,
+        message: "Review not found",
+      });
+
+    }
+
+    res.json({
+      success: true,
+      message: "Review deleted",
+    });
+
+  } catch (error) {
+
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+
+  }
+
+};

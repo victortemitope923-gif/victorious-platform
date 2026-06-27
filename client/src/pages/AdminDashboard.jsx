@@ -5,15 +5,42 @@ import React, {
 
 import {
   getReviews,
+  deleteReview,
 } from "../services/reviewService";
-
-
 
 export default function AdminDashboard() {
 
   const [reviews, setReviews] =
     useState([]);
 
+  const [loading, setLoading] =
+    useState(true);
+
+
+
+  const fetchReviews =
+    async () => {
+
+      try {
+
+        const data =
+          await getReviews();
+
+        setReviews(
+          data.reviews || []
+        );
+
+      } catch (error) {
+
+        console.log(error);
+
+      } finally {
+
+        setLoading(false);
+
+      }
+
+    };
 
 
 
@@ -27,17 +54,25 @@ export default function AdminDashboard() {
 
 
 
+  const handleDelete =
+    async (id) => {
 
-  const fetchReviews =
-    async () => {
+      const confirmDelete =
+        window.confirm(
+          "Delete this review?"
+        );
+
+      if (!confirmDelete) return;
 
       try {
 
-        const data =
-          await getReviews();
+        await deleteReview(id);
 
         setReviews(
-          data.reviews
+          reviews.filter(
+            (review) =>
+              review._id !== id
+          )
         );
 
       } catch (error) {
@@ -53,196 +88,151 @@ export default function AdminDashboard() {
 
 
 
-
-
-
   return (
 
     <div
       style={{
         minHeight: "100vh",
         background: "#F8FAFC",
-        padding: "60px 0",
+        padding: "40px",
       }}
     >
 
-      <div className="container">
+      <div
+        style={{
+          maxWidth: "1100px",
+          margin: "auto",
+        }}
+      >
 
-        <div
+        <h1
           style={{
-            marginBottom: "50px",
+            fontSize: "42px",
+            fontWeight: 800,
+            marginBottom: "40px",
           }}
         >
 
-          <p
+          Admin Dashboard
+
+        </h1>
+
+
+
+
+
+
+        {loading ? (
+
+          <p>
+            Loading reviews...
+          </p>
+
+        ) : reviews.length === 0 ? (
+
+          <p>
+            No reviews yet.
+          </p>
+
+        ) : (
+
+          <div
             style={{
-              color: "#2563EB",
-              fontWeight: 700,
-              marginBottom: "14px",
+              display: "grid",
+              gap: "24px",
             }}
           >
 
-            ADMIN PANEL
-
-          </p>
-
-
-
-
-
-          <h1 className="heading-lg">
-
-            Reviews Dashboard
-
-          </h1>
-
-        </div>
-
-
-
-
-
-
-
-
-
-        <div
-          style={{
-            display: "grid",
-            gap: "24px",
-          }}
-        >
-
-          {reviews.map((review) => (
-
-            <div
-              key={review._id}
-              className="card"
-            >
+            {reviews.map((review) => (
 
               <div
+                key={review._id}
                 style={{
-                  display: "flex",
-                  justifyContent:
-                    "space-between",
-                  alignItems: "center",
-                  flexWrap: "wrap",
-                  gap: "20px",
+                  background: "white",
+                  borderRadius: "24px",
+                  padding: "28px",
+                  boxShadow:
+                    "0 10px 30px rgba(15,23,42,.08)",
                 }}
               >
 
-
-
-
-                {/* USER */}
                 <div
                   style={{
                     display: "flex",
-                    alignItems: "center",
-                    gap: "16px",
+                    justifyContent:
+                      "space-between",
+                    gap: "20px",
+                    flexWrap: "wrap",
                   }}
                 >
 
-                  <img
-                    src={
-                      review.image ||
-                      "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=300"
-                    }
-                    alt={review.name}
-                    style={{
-                      width: "70px",
-                      height: "70px",
-                      borderRadius: "50%",
-                      objectFit: "cover",
-                    }}
-                  />
-
-
-
-
-
-
-
                   <div>
 
-                    <h3
+                    <h2
                       style={{
-                        fontSize: "22px",
+                        fontSize: "24px",
                         fontWeight: 700,
-                        marginBottom: "6px",
+                        marginBottom: "10px",
                       }}
                     >
 
                       {review.name}
 
-                    </h3>
-
-
-
-
+                    </h2>
 
                     <p
-                      className="text-muted"
+                      style={{
+                        color: "#64748B",
+                        lineHeight: 1.8,
+                        maxWidth: "700px",
+                      }}
                     >
 
-                      {review.service}
+                      {review.message}
 
                     </p>
 
                   </div>
 
-                </div>
 
 
 
 
 
+                  <button
+                    onClick={() =>
+                      handleDelete(
+                        review._id
+                      )
+                    }
+                    style={{
+                      background:
+                        "#EF4444",
+                      color: "white",
+                      border: "none",
+                      padding:
+                        "14px 24px",
+                      borderRadius:
+                        "14px",
+                      fontWeight: 700,
+                      cursor: "pointer",
+                      height: "fit-content",
+                    }}
+                  >
 
+                    Delete
 
-
-                {/* RATING */}
-                <div
-                  style={{
-                    fontSize: "20px",
-                  }}
-                >
-
-                  {"⭐".repeat(
-                    review.rating
-                  )}
+                  </button>
 
                 </div>
 
               </div>
 
+            ))}
 
+          </div>
 
-
-
-
-
-
-
-
-              {/* MESSAGE */}
-              <p
-                className="text-muted"
-                style={{
-                  marginTop: "28px",
-                  lineHeight: 1.9,
-                  fontSize: "17px",
-                }}
-              >
-
-                "{review.message}"
-
-              </p>
-
-            </div>
-
-          ))}
-
-        </div>
+        )}
 
       </div>
 
@@ -251,4 +241,3 @@ export default function AdminDashboard() {
   );
 
 }
-
