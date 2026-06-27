@@ -93,32 +93,151 @@ function App() {
 
 
 
-      {/* CTA */}
-      <section className="section">
+      {/* CTA SECTION */}
+<section
+  className="section"
+  style={{
+    background:"#F8FAFC",
+  }}
+>
 
-        <div className="container">
+  <div className="container">
 
-          <div
-            className="glass"
-            style={{
-              borderRadius: "40px",
-              padding: "80px",
-              textAlign: "center",
-            }}
+    <div
+      style={{
+        position:"relative",
+        overflow:"hidden",
+
+        background:
+        "linear-gradient(135deg,#052e16,#14532d)",
+
+        borderRadius:"40px",
+
+        padding:"90px 70px",
+
+        color:"white",
+      }}
+    >
+
+
+
+
+      {/* BACKGROUND IMAGE */}
+      <img
+        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop"
+        alt="team"
+
+        style={{
+          position:"absolute",
+          inset:0,
+          width:"100%",
+          height:"100%",
+          objectFit:"cover",
+          opacity:0.12,
+        }}
+      />
+
+
+
+
+
+
+
+
+      {/* CONTENT */}
+      <div
+        style={{
+          position:"relative",
+          zIndex:2,
+          maxWidth:"820px",
+        }}
+      >
+
+        <p
+          style={{
+            color:"#86EFAC",
+            fontWeight:700,
+            letterSpacing:"1px",
+            marginBottom:"22px",
+          }}
+        >
+
+          READY TO GROW?
+
+        </p>
+
+
+
+
+
+
+
+
+        <h2
+          className="heading-lg"
+          style={{
+            maxWidth:"760px",
+          }}
+        >
+
+          Let’s Scale
+          Your Udemy
+          Course Business
+
+        </h2>
+
+
+
+
+
+
+
+
+        <p
+          style={{
+            marginTop:"28px",
+            color:"#DCFCE7",
+            fontSize:"19px",
+            lineHeight:1.9,
+            maxWidth:"700px",
+          }}
+        >
+
+          Build a stronger course brand,
+          improve visibility,
+          increase enrollments
+          and create long-term marketplace growth
+          using proven optimization strategies.
+
+        </p>
+
+
+
+
+
+
+
+
+
+        {/* BUTTONS */}
+        <div
+          style={{
+            display:"flex",
+            gap:"18px",
+            marginTop:"42px",
+            flexWrap:"wrap",
+          }}
+        >
+
+          <a
+            href="https://upwork.com/freelancers/~010c38570f0d8c1ab5"
+            target="_blank"
+            className="btn-light"
           >
 
-            <h2
-              className="heading-lg"
-              style={{
-                maxWidth: "800px",
-                margin: "auto",
-              }}
-            >
+            Hire On Upwork
 
-              Ready To Scale
-              Your Online Course Business?
-
-            </h2>
+          </a>
 
 
 
@@ -126,70 +245,27 @@ function App() {
 
 
 
-            <p
-              className="text-muted"
-              style={{
-                marginTop: "24px",
-                fontSize: "18px",
-                lineHeight: 1.8,
-                maxWidth: "700px",
-                marginInline: "auto",
-              }}
-            >
-
-              Let’s build a structured growth strategy
-              for your courses, visibility,
-              rankings, and student acquisition.
-
-            </p>
 
 
+          <a
+            href="https://wa.me/2348136545616"
+            target="_blank"
+            className="btn-secondary"
+          >
 
+            Chat On WhatsApp
 
-
-
-
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                gap: "20px",
-                marginTop: "40px",
-                flexWrap: "wrap",
-              }}
-            >
-
-              <a
-                href={business?.upwork}
-                target="_blank"
-                className="btn-primary"
-              >
-
-                Hire On Upwork
-
-              </a>
-
-
-
-
-
-              <a
-                href={business?.facebook}
-                target="_blank"
-                className="btn-secondary"
-              >
-
-                Contact On Facebook
-
-              </a>
-
-            </div>
-
-          </div>
+          </a>
 
         </div>
 
-      </section>
+      </div>
+
+    </div>
+
+      </div>
+
+     </section>
 
 
 

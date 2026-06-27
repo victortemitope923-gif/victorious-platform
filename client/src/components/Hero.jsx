@@ -182,7 +182,7 @@ export default function Hero() {
           <div className="hero-image-wrapper">
 
             <img
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop"
+              src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1200"
               alt="Business Team"
               className="hero-image"
             />

@@ -18,13 +18,15 @@ connectDB();
 
 const app = express();
 
-app.use(
-  cors({
-    origin:
-      "https://victorious-platform.vercel.app",
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://victorious-platform.vercel.app",
+    "https://victoriousdigitalenterprises.xyz",
+    "https://www.victoriousdigitalenterprises.xyz"
+  ],
+  credentials: true
+}));
 
 
 app.use(express.json());

@@ -57,7 +57,7 @@ export default function Reviews() {
       role: "Online Educator",
 
       image:
-        "https://randomuser.me/api/portraits/men/75.jpg",
+        "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1200",
 
       review:
         "One of the best consulting experiences I’ve had. The growth systems actually produced measurable results.",

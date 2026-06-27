@@ -23,7 +23,7 @@ export default function Services() {
         <FaSearch />,
 
       image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
+        "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1200",
 
       description:
         "Improve your course rankings with strategic keyword optimization, titles, subtitles and marketplace positioning.",
@@ -43,7 +43,7 @@ export default function Services() {
         <FaBullhorn />,
 
       image:
-        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop",
+        "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1200",
 
       description:
         "Reach more students using modern traffic systems, promotion campaigns and scalable enrollment strategies.",
@@ -63,7 +63,7 @@ export default function Services() {
         <FaChartLine />,
 
       image:
-        "https://images.unsplash.com/photo-1556155092-490a1ba16284?q=80&w=1200&auto=format&fit=crop",
+        "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=1200",
 
       description:
         "We build long-term growth systems that help instructors increase visibility, sales and recurring student acquisition.",
@@ -84,7 +84,7 @@ export default function Services() {
         <FaRocket />,
 
       image:
-        "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
+        "https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg?auto=compress&cs=tinysrgb&w=1200",
 
       description:
         "Advanced optimization strategies designed specifically for Udemy algorithm performance and marketplace success.",
