@@ -1,4 +1,4 @@
-import React, {
+import React,{
   useState,
 } from "react";
 
@@ -10,30 +10,31 @@ import {
 
 export default function ReviewForm() {
 
-  const [formData, setFormData] =
+  const [formData,setFormData] =
     useState({
-      name: "",
-      rating: 5,
-      message: "",
-      image: "",
-      service: "",
+      name:"",
+      rating:5,
+      message:"",
+      image:"",
+      service:"",
     });
 
 
 
 
-  const [loading, setLoading] =
+  const [loading,setLoading] =
     useState(false);
 
 
 
 
-  const handleChange = (e) => {
+
+  const handleChange = (e)=>{
 
     setFormData({
       ...formData,
       [e.target.name]:
-        e.target.value,
+      e.target.value,
     });
 
   };
@@ -46,105 +47,100 @@ export default function ReviewForm() {
 
 
 
-
-
   const handleSubmit =
-    async (e) => {
+  async(e)=>{
 
-      e.preventDefault();
+    e.preventDefault();
 
-      try {
+    try{
 
-        setLoading(true);
+      setLoading(true);
 
-        await createReview(
-          formData
-        );
-
-
-
-        alert(
-          "Review submitted successfully"
-        );
+      await createReview(
+        formData
+      );
 
 
 
-        setFormData({
-          name: "",
-          rating: 5,
-          message: "",
-          image: "",
-          service: "",
-        });
 
-      } catch (error) {
 
-        console.log(error);
-
-        alert(
-          "Something went wrong"
-        );
-
-      } finally {
-
-        setLoading(false);
-
-      }
-
-    };
+      alert(
+        "Review submitted successfully"
+      );
 
 
 
 
 
 
+      setFormData({
+        name:"",
+        rating:5,
+        message:"",
+        image:"",
+        service:"",
+      });
+
+    }catch(error){
+
+      console.log(error);
+
+      alert(
+        "Something went wrong"
+      );
+
+    }finally{
+
+      setLoading(false);
+
+    }
+
+  };
 
 
 
 
 
 
-  return (
 
-    <section className="section">
+
+
+
+  return(
+
+    <section
+      className="section"
+      style={{
+        background:"#ffffff",
+      }}
+    >
 
       <div className="container">
 
+
+
+
         <div
-          className="card"
           style={{
-            maxWidth: "760px",
-            margin: "auto",
+            display:"grid",
+            gridTemplateColumns:
+            "repeat(auto-fit,minmax(320px,1fr))",
+            gap:"60px",
+            alignItems:"center",
           }}
         >
 
-          <h2
-            className="heading-lg"
-            style={{
-              marginBottom: "20px",
-            }}
-          >
-
-            Leave A Review
-
-          </h2>
 
 
 
+          {/* LEFT */}
+          <div>
 
+            <p className="section-tag">
 
+              SHARE EXPERIENCE
 
-          <p
-            className="text-muted"
-            style={{
-              marginBottom: "40px",
-            }}
-          >
-
-            Share your experience
-            working with us.
-
-          </p>
+            </p>
 
 
 
@@ -153,42 +149,18 @@ export default function ReviewForm() {
 
 
 
-
-
-
-
-          <form
-            onSubmit={handleSubmit}
-          >
-
-
-
-
-            {/* NAME */}
-            <div
+            <h2
+              className="heading-lg"
               style={{
-                marginBottom: "24px",
+                maxWidth:"580px",
               }}
             >
 
-              <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                style={{
-                  width: "100%",
-                  padding: "18px",
-                  borderRadius: "14px",
-                  border:
-                    "1px solid #CBD5E1",
-                  fontSize: "16px",
-                }}
-              />
+              Tell Others
+              About Your
+              Experience
 
-            </div>
+            </h2>
 
 
 
@@ -197,34 +169,22 @@ export default function ReviewForm() {
 
 
 
-
-
-
-
-            {/* PROFILE IMAGE */}
-            <div
+            <p
+              className="text-muted"
               style={{
-                marginBottom: "24px",
+                marginTop:"24px",
+                lineHeight:1.9,
+                fontSize:"18px",
+                maxWidth:"560px",
               }}
             >
 
-              <input
-                type="text"
-                name="image"
-                placeholder="Profile Image URL"
-                value={formData.image}
-                onChange={handleChange}
-                style={{
-                  width: "100%",
-                  padding: "18px",
-                  borderRadius: "14px",
-                  border:
-                    "1px solid #CBD5E1",
-                  fontSize: "16px",
-                }}
-              />
+              Your feedback helps build trust
+              and allows other instructors
+              discover better growth strategies
+              for their courses.
 
-            </div>
+            </p>
 
 
 
@@ -233,153 +193,353 @@ export default function ReviewForm() {
 
 
 
+            <img
+              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop"
+              alt="review"
 
-
-
-
-            {/* SERVICE */}
-            <div
               style={{
-                marginBottom: "24px",
+                marginTop:"40px",
+                borderRadius:"30px",
+                height:"420px",
+                objectFit:"cover",
+                boxShadow:
+                "0 20px 60px rgba(15,23,42,.10)",
+              }}
+            />
+
+          </div>
+
+
+
+
+
+
+
+
+
+          {/* RIGHT */}
+          <div>
+
+            <div
+              className="card"
+              style={{
+                padding:"42px",
               }}
             >
 
-              <input
-                type="text"
-                name="service"
-                placeholder="Service Used"
-                value={formData.service}
-                onChange={handleChange}
-                style={{
-                  width: "100%",
-                  padding: "18px",
-                  borderRadius: "14px",
-                  border:
-                    "1px solid #CBD5E1",
-                  fontSize: "16px",
-                }}
-              />
-
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-            {/* RATING */}
-            <div
-              style={{
-                marginBottom: "24px",
-              }}
-            >
-
-              <select
-                name="rating"
-                value={formData.rating}
-                onChange={handleChange}
-                style={{
-                  width: "100%",
-                  padding: "18px",
-                  borderRadius: "14px",
-                  border:
-                    "1px solid #CBD5E1",
-                  fontSize: "16px",
-                }}
+              <form
+                onSubmit={handleSubmit}
               >
 
-                <option value="5">
-                  5 Stars
-                </option>
 
-                <option value="4">
-                  4 Stars
-                </option>
 
-                <option value="3">
-                  3 Stars
-                </option>
 
-                <option value="2">
-                  2 Stars
-                </option>
+                {/* NAME */}
+                <div
+                  style={{
+                    marginBottom:"22px",
+                  }}
+                >
 
-                <option value="1">
-                  1 Star
-                </option>
+                  <label
+                    style={{
+                      display:"block",
+                      marginBottom:"10px",
+                      fontWeight:600,
+                    }}
+                  >
 
-              </select>
+                    Full Name
+
+                  </label>
+
+
+
+
+
+
+
+
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="John Carter"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+
+                    style={{
+                      width:"100%",
+                      padding:"18px",
+                      borderRadius:"14px",
+                      border:"1px solid #CBD5E1",
+                      fontSize:"16px",
+                    }}
+                  />
+
+                </div>
+
+
+
+
+
+
+
+
+
+                {/* SERVICE */}
+                <div
+                  style={{
+                    marginBottom:"22px",
+                  }}
+                >
+
+                  <label
+                    style={{
+                      display:"block",
+                      marginBottom:"10px",
+                      fontWeight:600,
+                    }}
+                  >
+
+                    Service Used
+
+                  </label>
+
+
+
+
+
+
+
+
+                  <input
+                    type="text"
+                    name="service"
+                    placeholder="Udemy SEO"
+                    value={formData.service}
+                    onChange={handleChange}
+
+                    style={{
+                      width:"100%",
+                      padding:"18px",
+                      borderRadius:"14px",
+                      border:"1px solid #CBD5E1",
+                      fontSize:"16px",
+                    }}
+                  />
+
+                </div>
+
+
+
+
+
+
+
+
+
+                {/* IMAGE */}
+                <div
+                  style={{
+                    marginBottom:"22px",
+                  }}
+                >
+
+                  <label
+                    style={{
+                      display:"block",
+                      marginBottom:"10px",
+                      fontWeight:600,
+                    }}
+                  >
+
+                    Profile Image URL
+
+                  </label>
+
+
+
+
+
+
+
+
+                  <input
+                    type="text"
+                    name="image"
+                    placeholder="https://..."
+                    value={formData.image}
+                    onChange={handleChange}
+
+                    style={{
+                      width:"100%",
+                      padding:"18px",
+                      borderRadius:"14px",
+                      border:"1px solid #CBD5E1",
+                      fontSize:"16px",
+                    }}
+                  />
+
+                </div>
+
+
+
+
+
+
+
+
+
+                {/* RATING */}
+                <div
+                  style={{
+                    marginBottom:"22px",
+                  }}
+                >
+
+                  <label
+                    style={{
+                      display:"block",
+                      marginBottom:"10px",
+                      fontWeight:600,
+                    }}
+                  >
+
+                    Rating
+
+                  </label>
+
+
+
+
+
+
+
+
+                  <select
+                    name="rating"
+                    value={formData.rating}
+                    onChange={handleChange}
+
+                    style={{
+                      width:"100%",
+                      padding:"18px",
+                      borderRadius:"14px",
+                      border:"1px solid #CBD5E1",
+                      fontSize:"16px",
+                    }}
+                  >
+
+                    <option value="5">
+                      5 Stars
+                    </option>
+
+                    <option value="4">
+                      4 Stars
+                    </option>
+
+                    <option value="3">
+                      3 Stars
+                    </option>
+
+                    <option value="2">
+                      2 Stars
+                    </option>
+
+                    <option value="1">
+                      1 Star
+                    </option>
+
+                  </select>
+
+                </div>
+
+
+
+
+
+
+
+
+
+                {/* MESSAGE */}
+                <div
+                  style={{
+                    marginBottom:"26px",
+                  }}
+                >
+
+                  <label
+                    style={{
+                      display:"block",
+                      marginBottom:"10px",
+                      fontWeight:600,
+                    }}
+                  >
+
+                    Your Review
+
+                  </label>
+
+
+
+
+
+
+
+
+                  <textarea
+                    name="message"
+                    rows="6"
+                    placeholder="Share your experience..."
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+
+                    style={{
+                      width:"100%",
+                      padding:"18px",
+                      borderRadius:"14px",
+                      border:"1px solid #CBD5E1",
+                      fontSize:"16px",
+                      resize:"none",
+                    }}
+                  />
+
+                </div>
+
+
+
+
+
+
+
+
+
+                <button
+                  type="submit"
+                  className="btn-primary"
+                  disabled={loading}
+
+                  style={{
+                    width:"100%",
+                    height:"58px",
+                    fontSize:"17px",
+                  }}
+                >
+
+                  {loading
+                    ? "Submitting..."
+                    : "Submit Review"}
+
+                </button>
+
+              </form>
 
             </div>
 
-
-
-
-
-
-
-
-
-
-
-
-            {/* MESSAGE */}
-            <div
-              style={{
-                marginBottom: "24px",
-              }}
-            >
-
-              <textarea
-                name="message"
-                placeholder="Write your review..."
-                rows="6"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                style={{
-                  width: "100%",
-                  padding: "18px",
-                  borderRadius: "14px",
-                  border:
-                    "1px solid #CBD5E1",
-                  fontSize: "16px",
-                  resize: "none",
-                }}
-              />
-
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-            <button
-              type="submit"
-              className="btn-primary"
-              disabled={loading}
-            >
-
-              {loading
-                ? "Submitting..."
-                : "Submit Review"}
-
-            </button>
-
-          </form>
+          </div>
 
         </div>
 
@@ -390,4 +550,3 @@ export default function ReviewForm() {
   );
 
 }
-

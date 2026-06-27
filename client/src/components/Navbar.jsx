@@ -1,6 +1,9 @@
-import React, {
-  useState,
-} from "react";
+import React, { useState } from "react";
+
+import {
+  FaWhatsapp,
+  FaFacebookF,
+} from "react-icons/fa";
 
 
 
@@ -11,74 +14,45 @@ export default function Navbar() {
 
 
 
-
   return (
 
     <header className="navbar">
 
       <div className="container">
 
-        <nav
-          style={{
-            height: "88px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
+        <nav className="nav-wrapper">
 
 
 
 
           {/* LOGO */}
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "14px",
-            }}
+          <a
+            href="#"
+            className="logo-area"
           >
 
-            <div
-              style={{
-                width: "42px",
-                height: "42px",
-                borderRadius: "12px",
-                background:
-                  "linear-gradient(135deg,#2563EB,#0F172A)",
-              }}
+            <img
+              src="https://i.postimg.cc/8zQ7s8D8/logo.png"
+              alt="Victorious Logo"
+              className="logo-img"
             />
+
+
+
 
             <div>
 
-              <h2
-                style={{
-                  color: "white",
-                  fontSize: "24px",
-                  fontWeight: 800,
-                  lineHeight: 1,
-                }}
-              >
-
+              <h2 className="logo-text">
                 Victorious
-
               </h2>
 
-              <p
-                style={{
-                  color: "#CBD5E1",
-                  fontSize: "13px",
-                  marginTop: "4px",
-                }}
-              >
-
-                Growth Consulting
-
+              <p className="logo-subtext">
+                Digital Growth
               </p>
 
             </div>
 
-          </div>
+          </a>
 
 
 
@@ -88,17 +62,8 @@ export default function Navbar() {
 
 
 
-          {/* DESKTOP MENU */}
-          <div
-            className="desktop-menu"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "38px",
-              color: "white",
-              fontWeight: 500,
-            }}
-          >
+          {/* DESKTOP LINKS */}
+          <div className="desktop-menu">
 
             <a href="#">
               Home
@@ -113,25 +78,7 @@ export default function Navbar() {
             </a>
 
             <a href="#">
-              About
-            </a>
-
-            <a href="#">
               Contact
-            </a>
-
-
-
-
-
-            <a
-              href="https://upwork.com/freelancers/~010c38570f0d8c1ab5"
-              target="_blank"
-              className="btn-primary"
-            >
-
-              Book A Call
-
             </a>
 
           </div>
@@ -144,25 +91,74 @@ export default function Navbar() {
 
 
 
-          {/* MOBILE BUTTON */}
-          <button
-            onClick={() =>
-              setOpen(!open)
-            }
-            className="mobile-btn"
-            style={{
-              display: "none",
-              background: "transparent",
-              color: "white",
-              fontSize: "34px",
-            }}
-          >
 
-            ☰
+          {/* RIGHT */}
+          <div className="nav-right">
 
-          </button>
+            <a
+              href="https://web.facebook.com/profile.php?id=61581763733878"
+              target="_blank"
+              className="social-circle"
+            >
+
+              <FaFacebookF />
+
+            </a>
+
+
+
+
+
+
+
+            <a
+              href="https://wa.me/2348136545616"
+              target="_blank"
+              className="social-circle"
+            >
+
+              <FaWhatsapp />
+
+            </a>
+
+
+
+
+
+
+
+            <a
+              href="https://upwork.com/freelancers/~010c38570f0d8c1ab5"
+              target="_blank"
+              className="btn-primary"
+            >
+
+              Hire Us
+
+            </a>
+
+
+
+
+
+
+
+
+            <button
+              className="mobile-btn"
+              onClick={() =>
+                setOpen(!open)
+              }
+            >
+
+              ☰
+
+            </button>
+
+          </div>
 
         </nav>
+
 
 
 
@@ -174,18 +170,7 @@ export default function Navbar() {
         {/* MOBILE MENU */}
         {open && (
 
-          <div
-            style={{
-              background: "#0F172A",
-              borderRadius: "24px",
-              padding: "30px",
-              display: "flex",
-              flexDirection: "column",
-              gap: "24px",
-              color: "white",
-              marginBottom: "24px",
-            }}
-          >
+          <div className="mobile-menu">
 
             <a href="#">
               Home
@@ -200,12 +185,9 @@ export default function Navbar() {
             </a>
 
             <a href="#">
-              About
-            </a>
-
-            <a href="#">
               Contact
             </a>
+
 
 
 
@@ -217,7 +199,7 @@ export default function Navbar() {
               className="btn-primary"
             >
 
-              Book A Call
+              Hire Us
 
             </a>
 
@@ -232,4 +214,3 @@ export default function Navbar() {
   );
 
 }
-

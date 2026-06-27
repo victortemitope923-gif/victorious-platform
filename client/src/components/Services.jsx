@@ -2,6 +2,13 @@ import React from "react";
 
 import Reveal from "./Reveal";
 
+import {
+  FaChartLine,
+  FaSearch,
+  FaBullhorn,
+  FaRocket,
+} from "react-icons/fa";
+
 
 
 export default function Services() {
@@ -12,38 +19,75 @@ export default function Services() {
       title:
         "Udemy SEO Optimization",
 
+      icon:
+        <FaSearch />,
+
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
+
       description:
-        "We optimize your course title, subtitles, keywords, descriptions and search positioning to improve rankings and visibility.",
+        "Improve your course rankings with strategic keyword optimization, titles, subtitles and marketplace positioning.",
     },
+
+
+
+
 
 
 
     {
       title:
-        "Course Promotion & Marketing",
+        "Course Promotion",
+
+      icon:
+        <FaBullhorn />,
+
+      image:
+        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop",
 
       description:
-        "Advanced promotion systems that help increase enrollments, improve traffic quality and build stronger audience reach.",
+        "Reach more students using modern traffic systems, promotion campaigns and scalable enrollment strategies.",
     },
+
+
+
+
 
 
 
     {
       title:
-        "AEO & Algorithm Optimization",
+        "Growth Consulting",
+
+      icon:
+        <FaChartLine />,
+
+      image:
+        "https://images.unsplash.com/photo-1556155092-490a1ba16284?q=80&w=1200&auto=format&fit=crop",
 
       description:
-        "We help your courses align with Udemy’s recommendation systems for improved discoverability and marketplace growth.",
+        "We build long-term growth systems that help instructors increase visibility, sales and recurring student acquisition.",
     },
+
+
+
+
+
 
 
 
     {
       title:
-        "Growth Strategy Consulting",
+        "Marketplace Strategy",
+
+      icon:
+        <FaRocket />,
+
+      image:
+        "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
 
       description:
-        "Structured scaling systems focused on long-term growth, conversion optimization and revenue expansion.",
+        "Advanced optimization strategies designed specifically for Udemy algorithm performance and marketplace success.",
     },
 
   ];
@@ -53,27 +97,23 @@ export default function Services() {
 
 
 
+
+
+
+
   return (
 
-    <section className="section">
+    <section className="services-section">
 
       <div className="container">
 
-        <div
-          style={{
-            textAlign: "center",
-            marginBottom: "70px",
-          }}
-        >
 
-          <p
-            style={{
-              color: "#2563EB",
-              fontWeight: 700,
-              marginBottom: "18px",
-              letterSpacing: "1px",
-            }}
-          >
+
+
+        {/* TOP */}
+        <div className="section-heading">
+
+          <p className="section-tag">
 
             OUR SERVICES
 
@@ -83,18 +123,28 @@ export default function Services() {
 
 
 
-          <h2
-            className="heading-lg"
-            style={{
-              maxWidth: "760px",
-              margin: "auto",
-            }}
-          >
 
-            Everything You Need
-            To Succeed On Udemy
+          <h2 className="section-title">
+
+            Everything Needed
+            To Scale Your
+            Udemy Business
 
           </h2>
+
+
+
+
+
+
+          <p className="section-text">
+
+            Modern growth systems,
+            real optimization strategies
+            and long-term scaling support
+            for serious instructors.
+
+          </p>
 
         </div>
 
@@ -105,42 +155,27 @@ export default function Services() {
 
 
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns:
-              "repeat(auto-fit,minmax(260px,1fr))",
-            gap: "28px",
-          }}
-        >
+
+        {/* GRID */}
+        <div className="services-grid">
 
           {services.map((service, index) => (
 
             <Reveal key={index}>
 
-              <div className="card">
+              <div className="service-card">
 
 
 
 
-                {/* ICON */}
-                <div
-                  style={{
-                    width: "72px",
-                    height: "72px",
-                    borderRadius: "50%",
-                    background:
-                      "linear-gradient(135deg,#0F172A,#2563EB)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: "white",
-                    fontSize: "28px",
-                    marginBottom: "30px",
-                  }}
-                >
+                {/* IMAGE */}
+                <div className="service-image-wrapper">
 
-                  ✦
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="service-image"
+                  />
 
                 </div>
 
@@ -151,18 +186,14 @@ export default function Services() {
 
 
 
-                <h3
-                  style={{
-                    fontSize: "30px",
-                    fontWeight: 700,
-                    lineHeight: 1.3,
-                    marginBottom: "20px",
-                  }}
-                >
+                {/* CONTENT */}
+                <div className="service-content">
 
-                  {service.title}
+                  <div className="service-icon">
 
-                </h3>
+                    {service.icon}
+
+                  </div>
 
 
 
@@ -171,17 +202,11 @@ export default function Services() {
 
 
 
-                <p
-                  className="text-muted"
-                  style={{
-                    lineHeight: 1.9,
-                    fontSize: "16px",
-                  }}
-                >
+                  <h3 className="service-title">
 
-                  {service.description}
+                    {service.title}
 
-                </p>
+                  </h3>
 
 
 
@@ -190,19 +215,26 @@ export default function Services() {
 
 
 
-                <button
-                  style={{
-                    marginTop: "32px",
-                    background: "transparent",
-                    color: "#2563EB",
-                    fontWeight: 700,
-                    fontSize: "16px",
-                  }}
-                >
+                  <p className="service-description">
 
-                  Learn More →
+                    {service.description}
 
-                </button>
+                  </p>
+
+
+
+
+
+
+
+
+                  <button className="service-btn">
+
+                    Learn More →
+
+                  </button>
+
+                </div>
 
               </div>
 
@@ -219,4 +251,3 @@ export default function Services() {
   );
 
 }
-

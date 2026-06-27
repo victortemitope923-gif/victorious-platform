@@ -2,12 +2,9 @@ import React from "react";
 
 import {
   FaFacebookF,
-} from "react-icons/fa6";
+  FaWhatsapp,
+} from "react-icons/fa";
 
-import {
-  SiUpwork,
-  SiFiverr,
-} from "react-icons/si";
 
 
 export default function Footer() {
@@ -19,22 +16,15 @@ export default function Footer() {
       <div
         className="container"
         style={{
-          paddingTop: "90px",
-          paddingBottom: "40px",
+          paddingTop:"90px",
+          paddingBottom:"40px",
         }}
       >
 
 
 
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns:
-              "repeat(auto-fit,minmax(220px,1fr))",
-            gap: "40px",
-          }}
-        >
+        <div className="grid-4">
 
 
 
@@ -42,10 +32,26 @@ export default function Footer() {
           {/* BRAND */}
           <div>
 
+            <img
+              src="https://i.postimg.cc/8zQ7s8D8/logo.png"
+              alt="logo"
+              style={{
+                width:"58px",
+                marginBottom:"24px",
+              }}
+            />
+
+
+
+
+
+
+
+
             <h2
               style={{
-                fontSize: "34px",
-                fontWeight: 800,
+                fontSize:"34px",
+                fontWeight:800,
               }}
             >
 
@@ -57,18 +63,20 @@ export default function Footer() {
 
 
 
+
+
+
             <p
               style={{
-                color: "#CBD5E1",
-                marginTop: "20px",
-                lineHeight: 1.9,
+                color:"#CBD5E1",
+                marginTop:"20px",
+                lineHeight:1.9,
               }}
             >
 
-              Helping instructors improve
-              visibility, rankings,
-              enrollments and long-term
-              marketplace growth.
+              Helping instructors grow,
+              optimize and scale their
+              online course businesses.
 
             </p>
 
@@ -87,12 +95,12 @@ export default function Footer() {
 
             <h3
               style={{
-                marginBottom: "22px",
-                fontSize: "20px",
+                marginBottom:"24px",
+                fontSize:"20px",
               }}
             >
 
-              Quick Links
+              Navigation
 
             </h3>
 
@@ -100,12 +108,14 @@ export default function Footer() {
 
 
 
+
+
+
             <div
               style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "16px",
-                color: "#CBD5E1",
+                display:"flex",
+                flexDirection:"column",
+                gap:"16px",
               }}
             >
 
@@ -137,13 +147,14 @@ export default function Footer() {
 
 
 
+
           {/* SERVICES */}
           <div>
 
             <h3
               style={{
-                marginBottom: "22px",
-                fontSize: "20px",
+                marginBottom:"24px",
+                fontSize:"20px",
               }}
             >
 
@@ -155,12 +166,15 @@ export default function Footer() {
 
 
 
+
+
+
             <div
               style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "16px",
-                color: "#CBD5E1",
+                display:"flex",
+                flexDirection:"column",
+                gap:"16px",
+                color:"#CBD5E1",
               }}
             >
 
@@ -169,15 +183,15 @@ export default function Footer() {
               </p>
 
               <p>
-                AEO Optimization
-              </p>
-
-              <p>
                 Course Promotion
               </p>
 
               <p>
-                Growth Strategy
+                Growth Consulting
+              </p>
+
+              <p>
+                Marketplace Strategy
               </p>
 
             </div>
@@ -192,13 +206,14 @@ export default function Footer() {
 
 
 
-          {/* SOCIALS */}
+
+          {/* SOCIAL */}
           <div>
 
             <h3
               style={{
-                marginBottom: "22px",
-                fontSize: "20px",
+                marginBottom:"24px",
+                fontSize:"20px",
               }}
             >
 
@@ -210,32 +225,24 @@ export default function Footer() {
 
 
 
+
+
+
             <div
               style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "18px",
+                display:"flex",
+                gap:"16px",
               }}
             >
-
-
-
 
               <a
                 href="https://web.facebook.com/profile.php?id=61581763733878"
                 target="_blank"
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "14px",
-                  color: "#0b1d32",
-                }}
+                className="social-circle"
               >
 
                 <FaFacebookF />
 
-                Facebook
-
               </a>
 
 
@@ -246,47 +253,38 @@ export default function Footer() {
 
 
               <a
-                href="https://upwork.com/freelancers/~010c38570f0d8c1ab5"
+                href="https://wa.me/2348136545616"
                 target="_blank"
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "14px",
-                  color: "#021328",
-                }}
+                className="social-circle"
               >
 
-                <SiUpwork />
-
-                Upwork
-
-              </a>
-
-
-
-
-
-
-
-
-              <a
-                href="https://www.fiverr.com/"
-                target="_blank"
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "14px",
-                  color: "#CBD5E1",
-                }}
-              >
-
-                <SiFiverr />
-
-                Fiverr
+                <FaWhatsapp />
 
               </a>
 
             </div>
+
+
+
+
+
+
+
+
+
+
+            <a
+              href="https://upwork.com/freelancers/~010c38570f0d8c1ab5"
+              target="_blank"
+              className="btn-primary"
+              style={{
+                marginTop:"30px",
+              }}
+            >
+
+              Hire On Upwork
+
+            </a>
 
           </div>
 
@@ -304,15 +302,15 @@ export default function Footer() {
         <div
           style={{
             borderTop:
-              "1px solid rgba(255,255,255,0.08)",
-            marginTop: "70px",
-            paddingTop: "28px",
-            textAlign: "center",
-            color: "#94A3B8",
+              "1px solid rgba(255,255,255,.08)",
+            marginTop:"70px",
+            paddingTop:"28px",
+            textAlign:"center",
+            color:"#94A3B8",
           }}
         >
 
-          © 2026 Victorious Consulting.
+          © 2026 Victorious Digital Enterprises.
           All rights reserved.
 
         </div>
@@ -324,4 +322,3 @@ export default function Footer() {
   );
 
 }
-

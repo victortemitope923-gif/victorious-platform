@@ -1,5 +1,10 @@
 import React from "react";
 
+import {
+  FaArrowRight,
+  FaStar,
+} from "react-icons/fa";
+
 
 
 export default function Hero() {
@@ -8,182 +13,92 @@ export default function Hero() {
 
     <section className="hero">
 
-      <div
-        className="container"
-        style={{
-          paddingTop: "120px",
-          paddingBottom: "120px",
-        }}
-      >
-
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns:
-              "repeat(auto-fit,minmax(320px,1fr))",
-            gap: "80px",
-            alignItems: "center",
-          }}
-        >
+      <div className="container hero-grid">
 
 
 
 
-          {/* LEFT */}
-          <div>
+        {/* LEFT */}
+        <div className="hero-left">
 
-            <p
-              style={{
-                color: "#60A5FA",
-                fontWeight: 600,
-                marginBottom: "22px",
-                letterSpacing: "1px",
-              }}
+          <div className="hero-badge">
+
+            TRUSTED UDEMY GROWTH AGENCY
+
+          </div>
+
+
+
+
+
+
+
+
+          <h1 className="hero-title">
+
+            We Help
+            Udemy Instructors
+            Grow Faster
+            And Earn More
+
+          </h1>
+
+
+
+
+
+
+
+
+          <p className="hero-text">
+
+            Strategic course optimization,
+            Udemy SEO, marketplace ranking,
+            conversion systems and promotion
+            strategies designed for long-term
+            growth and visibility.
+
+          </p>
+
+
+
+
+
+
+
+
+
+          {/* BUTTONS */}
+          <div className="hero-buttons">
+
+            <a
+              href="https://upwork.com/freelancers/~010c38570f0d8c1ab5"
+              target="_blank"
+              className="btn-primary"
             >
 
-              UDEMY GROWTH CONSULTING
+              Get Started
 
-            </p>
+              <FaArrowRight />
 
-
-
-
+            </a>
 
 
 
-            <h1
-              className="heading-xl"
-              style={{
-                maxWidth: "700px",
-              }}
+
+
+
+
+
+            <a
+              href="https://wa.me/2348136545616"
+              target="_blank"
+              className="btn-secondary-dark"
             >
 
-              We Help
-              Instructors Grow,
-              Rank & Earn More
+              WhatsApp Us
 
-            </h1>
-
-
-
-
-
-
-
-            <p
-              style={{
-                color: "#CBD5E1",
-                marginTop: "28px",
-                fontSize: "20px",
-                lineHeight: 1.8,
-                maxWidth: "620px",
-              }}
-            >
-
-              Strategic Udemy SEO,
-              course promotion,
-              algorithm optimization,
-              and marketplace growth systems
-              that help your courses
-              reach more students.
-
-            </p>
-
-
-
-
-
-
-
-
-            {/* BUTTONS */}
-            <div
-              style={{
-                display: "flex",
-                gap: "20px",
-                marginTop: "42px",
-                flexWrap: "wrap",
-              }}
-            >
-
-              <button className="btn-primary">
-
-                Our Services
-
-              </button>
-
-
-
-
-
-              <button className="btn-secondary">
-
-                Book A Call
-
-              </button>
-
-            </div>
-
-
-
-
-
-
-
-
-            {/* STATS */}
-            <div
-              className="stats"
-              style={{
-                marginTop: "70px",
-              }}
-            >
-
-              <div className="stat-box">
-
-                <h2>
-                  5.0
-                </h2>
-
-                <p>
-                  Client Rating
-                </p>
-
-              </div>
-
-
-
-
-
-              <div className="stat-box">
-
-                <h2>
-                  100+
-                </h2>
-
-                <p>
-                  Projects Completed
-                </p>
-
-              </div>
-
-
-
-
-
-              <div className="stat-box">
-
-                <h2>
-                  248%
-                </h2>
-
-                <p>
-                  Growth Increase
-                </p>
-
-              </div>
-
-            </div>
+            </a>
 
           </div>
 
@@ -195,88 +110,61 @@ export default function Hero() {
 
 
 
-          {/* RIGHT CARD */}
-          <div>
 
-            <div
-              style={{
-                background:
-                  "linear-gradient(180deg,#0B1738,#081126)",
-                border:
-                  "1px solid rgba(255,255,255,0.08)",
-                borderRadius: "34px",
-                padding: "42px",
-                minHeight: "520px",
-                position: "relative",
-                overflow: "hidden",
-              }}
-            >
+          {/* STATS */}
+          <div className="hero-stats">
 
-              <div
-                style={{
-                  position: "absolute",
-                  top: "-120px",
-                  right: "-120px",
-                  width: "240px",
-                  height: "240px",
-                  borderRadius: "50%",
-                  background:
-                    "rgba(37,99,235,0.25)",
-                  filter: "blur(80px)",
-                }}
-              />
+            <div className="hero-stat">
 
-
-
-
-
-
-
-
-              <p
-                style={{
-                  color: "#CBD5E1",
-                  fontSize: "18px",
-                }}
-              >
-
-                Total Students
-
-              </p>
-
-
-
-
-
-              <h2
-                style={{
-                  fontSize: "64px",
-                  fontWeight: 800,
-                  marginTop: "14px",
-                }}
-              >
-
-                24,816
-
+              <h2>
+                100+
               </h2>
 
-
-
-
-
-              <p
-                style={{
-                  color: "#4ADE80",
-                  marginTop: "10px",
-                  fontWeight: 700,
-                  fontSize: "22px",
-                }}
-              >
-
-                ↑ 35.4%
-
+              <p>
+                Courses Optimized
               </p>
 
+            </div>
+
+
+
+
+
+
+
+            <div className="hero-stat">
+
+              <h2>
+                248%
+              </h2>
+
+              <p>
+                Growth Increase
+              </p>
+
+            </div>
+
+
+
+
+
+
+
+            <div className="hero-stat">
+
+              <h2>
+                5.0
+              </h2>
+
+              <p>
+                Client Rating
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
 
 
 
@@ -285,40 +173,51 @@ export default function Hero() {
 
 
 
-              {/* GRAPH */}
-              <div
-                style={{
-                  marginTop: "60px",
-                  height: "220px",
-                  borderRadius: "24px",
-                  position: "relative",
-                  overflow: "hidden",
-                }}
-              >
 
-                <svg
-                  viewBox="0 0 500 200"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                  }}
-                >
 
-                  <path
-                    d="
-                    M0 180
-                    C50 160 80 120 120 130
-                    C160 140 180 80 230 90
-                    C280 100 300 40 360 60
-                    C420 80 440 10 500 20
-                    "
-                    fill="none"
-                    stroke="#2563EB"
-                    strokeWidth="6"
-                    strokeLinecap="round"
-                  />
 
-                </svg>
+        {/* RIGHT */}
+        <div className="hero-right">
+
+          <div className="hero-image-wrapper">
+
+            <img
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop"
+              alt="Business Team"
+              className="hero-image"
+            />
+
+
+
+
+
+
+
+
+
+            {/* FLOATING CARD */}
+            <div className="floating-card">
+
+              <div className="floating-top">
+
+                <div>
+
+                  <p>
+                    Monthly Growth
+                  </p>
+
+                  <h3>
+                    +35.8%
+                  </h3>
+
+                </div>
+
+
+
+
+
+
+                <div className="green-dot"></div>
 
               </div>
 
@@ -330,90 +229,15 @@ export default function Hero() {
 
 
 
-              {/* MINI CARDS */}
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns:
-                    "1fr 1fr",
-                  gap: "20px",
-                  marginTop: "30px",
-                }}
-              >
+              <div className="floating-bottom">
 
-                <div
-                  style={{
-                    background:
-                      "rgba(255,255,255,0.03)",
-                    border:
-                      "1px solid rgba(255,255,255,0.06)",
-                    borderRadius: "24px",
-                    padding: "24px",
-                  }}
-                >
+                <FaStar className="star-icon" />
 
-                  <p
-                    style={{
-                      color: "#CBD5E1",
-                    }}
-                  >
+                <span>
 
-                    Reviews
+                  Trusted by instructors worldwide
 
-                  </p>
-
-                  <h3
-                    style={{
-                      marginTop: "12px",
-                      fontSize: "40px",
-                    }}
-                  >
-
-                    4.9
-
-                  </h3>
-
-                </div>
-
-
-
-
-
-
-
-                <div
-                  style={{
-                    background:
-                      "rgba(255,255,255,0.03)",
-                    border:
-                      "1px solid rgba(255,255,255,0.06)",
-                    borderRadius: "24px",
-                    padding: "24px",
-                  }}
-                >
-
-                  <p
-                    style={{
-                      color: "#CBD5E1",
-                    }}
-                  >
-
-                    Revenue
-
-                  </p>
-
-                  <h3
-                    style={{
-                      marginTop: "12px",
-                      fontSize: "40px",
-                    }}
-                  >
-
-                    $18K
-
-                  </h3>
-
-                </div>
+                </span>
 
               </div>
 
@@ -430,4 +254,3 @@ export default function Hero() {
   );
 
 }
-
